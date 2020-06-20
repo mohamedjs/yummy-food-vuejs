@@ -85,7 +85,9 @@ return [
            'database' => env('MONGO_DB_DATABASE','ecommerce'),
            'username' => env('MONGO_DB_USERNAME','mohamed'),
            'password' => env('MONGO_DB_PASSWORD','mohamed011'),
-           'options'  => []
+           'options'  => [
+             'retryWrites'=>false
+           ]
        ],
 
       //  'mongodb' => [

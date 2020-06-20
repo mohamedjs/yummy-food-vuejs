@@ -1,0 +1,43 @@
+table product
+product_name , datiles , discount , category_id , quntity ,price_small ,price_medium , price_larg ,price_after_discount_small,price_after_discount_medium,
+price_after_discount_larg
+
+table product_image
+product_id , image , width ,height
+
+table product_topping
+product_id , topping_name , price
+
+table product_color
+product_id , color , price
+
+table product_review
+product_id , user_id , review_title , body_of_review , rate , name , email
+
+table product_wish_compare
+user_id product_id price
+
+table about_us
+company_name , about_us , our_company , addres , phone , email , image
+lat , lang 
+
+table our_people
+name , image ,job_type , about
+
+table blog_category
+category_name
+
+table tags
+tags_name
+
+table blog
+blog_category_id ,title , body
+
+table blog_comment
+blog_id , user_id , comment , name , email
+
+table blog_tags
+blog_id , tage_id
+
+table hour_work
+day , from , to

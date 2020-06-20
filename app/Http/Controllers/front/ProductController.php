@@ -154,8 +154,8 @@ class ProductController extends Controller
           array_push($product_ids,$value->product_id);
         }
       }
-      return $product_ids;
-      Product::whereIn('_id',array_filter($product_ids))->delete();
+      //return $product_ids;
+      Product::whereIn('_id',array_unique(array_filter($product_ids)))->delete();
     }
 
 

@@ -593,6 +593,7 @@
     },
     created(){
       this.get_item()
+      console.log(this.url_image+'svg/image-loader.8402b89.gif');
     }
   });
 </script>

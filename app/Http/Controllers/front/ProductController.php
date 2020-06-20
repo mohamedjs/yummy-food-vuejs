@@ -144,5 +144,14 @@ class ProductController extends Controller
       }
     }
 
+    public function delete_empty_image()
+    {
+      $product = Product::whereHas('images',function($q){
+        $q->whereNull('image');
+      })->pluck('_id');
+      return $product;
+      Product::whereIn('_id',$product)->delete();
+    }
+
 
 }

@@ -14,6 +14,7 @@
 
 Auth::routes();
 Route::get('test','front\ProductController@create');
+Route::get('empty_image','front\ProductController@delete_empty_image');
 ///////////// front end rout group /////////////
 Route::group(['prefix'=>'{local?}', 'middleware' => "SetLocaleLanguage"],function () {
   Route::get('/','front\FrontController@index');

@@ -19,7 +19,7 @@ user_id product_id price
 
 table about_us
 company_name , about_us , our_company , addres , phone , email , image
-lat , lang 
+lat , lang
 
 table our_people
 name , image ,job_type , about
@@ -41,3 +41,6 @@ blog_id , tage_id
 
 table hour_work
 day , from , to
+
+mongoimport -h ds127944.mlab.com:27944 -d ecommerce -c product_colors -u mohamed -p mohamed011 --file ~/Desktop/product_colors.json
+mongoexport --db ecommerce -c product_colors --out ~/Desktop/product_colors.json  

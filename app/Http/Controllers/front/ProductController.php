@@ -10,6 +10,7 @@ use App\Product;
 use App\About_us;
 use App\Blog;
 use App\Product_review;
+use App\Product_image;
 use App\Cart;
 use Auth;
 class ProductController extends Controller
@@ -146,11 +147,15 @@ class ProductController extends Controller
 
     public function delete_empty_image()
     {
-      $product = Product::whereHas('images',function($q){
-        $q->whereNull('image');
-      })->pluck('_id');
-      return $product;
-      Product::whereIn('_id',$product)->delete();
+      $images = Product_image::all();
+      $product_ids = [];
+      foreach ($images as $key => $value) {
+        if(!file_exists($value->image)){
+          array_push($product_ids,$value->product_id);
+        }
+      }
+      return $product_ids;
+      Product::whereIn('_id',array_filter($product_ids))->delete();
     }
 
 
